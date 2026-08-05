@@ -752,10 +752,12 @@ footer p {
   }
 }
 
-.menu-image {
+.menu-reveal .menu-image {
   display: block;
-  width: min(100%, 700px);
+  width: 100%;
+  max-width: 700px;
   height: auto;
+  object-fit: contain;
   margin: 20px auto 10px;
 }
 
