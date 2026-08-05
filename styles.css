@@ -752,6 +752,13 @@ footer p {
   }
 }
 
+.menu-image {
+  display: block;
+  width: min(100%, 700px);
+  height: auto;
+  margin: 20px auto 10px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
