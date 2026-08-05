@@ -157,13 +157,6 @@ form.addEventListener("submit", async (event) => {
     submitButton.disabled = false;
     submitButton.textContent = "Send my RSVP";
   }
-  
-  .menu-image {
-  display: block;
-  width: min(100%, 700px);
-  height: auto;
-  margin: 20px auto 10px;
-  }
 
   
 });
