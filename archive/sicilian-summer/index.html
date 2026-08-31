@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Drinks, aperitif, dinner, and music at my place.">
+    <title>Sicilian Summer Evening</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <section class="hero-shell">
+        <div class="hero-copy">
+          <p class="eyebrow">Friday, August 7 · from 6 pm</p>
+          <h1>Ciao, <span id="guest-name">friend</span>!</h1>
+          <p class="welcome-line">Come spend a Sicilian summer evening at my place.</p>
+          <div class="hero-stamps" aria-label="Evening details">
+            <span>Drinks</span>
+            <span>Aperitif</span>
+            <span>Dinner</span>
+            <span>Music</span>
+          </div>
+        </div>
+
+        <figure class="invite-frame">
+          <img
+            src="assets/sicilian-dinner-invite.png"
+            alt="Illustrated invitation for a Sicilian summer dinner on Friday, August 7 from 6 pm until late"
+          >
+        </figure>
+      </section>
+
+      <section class="details-card" id="details">
+        <div class="section-number">01</div>
+        <div>
+          <p class="kicker">What I'm planning</p>
+          <h2>Drinks, little plates, and dinner</h2>
+          <p>
+            I'm hosting aperitif, followed by a Sicilian-inspired dinner with lots
+            of different plates to share. There will be both alcoholic and
+            non-alcoholic drinks, with at least two drinks for everyone. If you
+            know you want to drink more or something specific, please bring it
+            with you!
+          </p>
+        </div>
+      </section>
+
+      <section class="rsvp-section" id="rsvp">
+        <header class="section-heading">
+          <p class="kicker">The important bit</p>
+          <h2>Can you make it?</h2>
+          <p>
+            Give me your answer below. Make sure you hit "Send my RSVP" at the
+            bottom so I actually get it. You can come back and change it later.
+          </p>
+        </header>
+
+        <form class="rsvp-form" id="rsvp-form">
+          <fieldset class="choice-fieldset">
+            <legend>RSVP</legend>
+            <div class="big-choices">
+              <button class="choice" type="button" data-rsvp="yes" aria-pressed="false">
+                Yes, obviously
+              </button>
+              <button class="choice" type="button" data-rsvp="no" aria-pressed="false">
+                I can't make it :(( 
+              </button>
+            </div>
+          </fieldset>
+
+          <div class="yes-details hidden" id="yes-details">
+            <section class="form-panel arrival-panel">
+              <p class="panel-label">Arrival</p>
+              <h3>When should I expect you?</h3>
+              <div class="small-choices">
+                <label class="radio-card selected" data-radio-card>
+                  <input type="radio" name="arrival-plan" value="six" checked>
+                  I'll be there at 6
+                </label>
+                <label class="radio-card" data-radio-card>
+                  <input type="radio" name="arrival-plan" value="later">
+                  I'll be a little later
+                </label>
+              </div>
+              <label class="stacked-field hidden" id="arrival-time-wrap">
+                Tell me roughly what time?
+                <input type="time" id="arrival-time">
+              </label>
+            </section>
+
+            <section class="menu-reveal" aria-live="polite">
+              <div class="menu-tape">The menu</div>
+              <img
+              class="menu-image"
+              src="assets/menu.png"
+              alt="Menu for our evening!"
+                >
+            </section>
+
+            <section class="form-panel">
+              <p class="panel-label">Your ticket through the door</p>
+              <h3>$5 minimum cover</h3>
+              <p>
+                E-transfer me or bring cash to the door. In return,
+                you get at least two drinks and a full meal!
+              </p>
+              <div class="small-choices">
+                <label class="radio-card" data-radio-card>
+                  <input type="radio" name="payment" value="E-transfer">
+                  I'll e-transfer
+                </label>
+                <label class="radio-card" data-radio-card>
+                  <input type="radio" name="payment" value="Cash">
+                  I'll bring cash
+                </label>
+              </div>
+            </section>
+
+            <section class="form-panel dessert-panel">
+              <p class="panel-label">Bring your own dolce</p>
+              <h3>Feel like bringing dessert?</h3>
+              <p>
+                Think light, fruity, lemony, and cold. Sorbet, gelato,
+                ice cream, fruit, or anything else that feels like summer.
+              </p>
+              <label class="check-card">
+                <input type="checkbox" id="bringing-dessert">
+                Yes, I'll bring something
+              </label>
+              <label class="stacked-field hidden" id="dessert-wrap">
+                What are you thinking?
+                <input
+                  type="text"
+                  id="dessert"
+                  placeholder="Ice cream, fruit..."
+                >
+              </label>
+            </section>
+          </div>
+
+          <section class="form-panel final-panel hidden" id="final-panel">
+            <label class="stacked-field notes-field">
+              Any questions or notes for me?
+              <textarea
+                id="notes"
+                placeholder="Anything you want me to know..."
+                rows="4"
+              ></textarea>
+            </label>
+
+            <button class="submit-button" id="submit-button" type="submit">
+              Send my RSVP
+            </button>
+            <p class="submit-message hidden" id="submit-message" role="status"></p>
+          </section>
+        </form>
+      </section>
+
+      <section class="playlist-card">
+        <div class="record" aria-hidden="true"><span></span></div>
+        <div>
+          <p class="kicker">Help choose the soundtrack</p>
+          <h2>Add something good</h2>
+          <p>Add a song or several to the playlist for the evening.</p>
+          <a
+            class="spotify-button"
+            href="https://open.spotify.com/playlist/418Zln89sp9z2AFppfrQTi?si=4e8b5e93bc2f4a7a&amp;pt=9064da235feadc70b869fd5e0f831017"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open the Spotify playlist
+          </a>
+        </div>
+      </section>
+
+      <footer>
+        <p>Friday, August 7 · 6 pm until late · My place</p>
+        <p>Come hungry xxx</p>
+      </footer>
+    </main>
+  </body>
+</html>
