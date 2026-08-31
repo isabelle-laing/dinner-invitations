@@ -10,6 +10,7 @@ const GUESTS = {
   darrell: "Darrell",
   melana: "Melana",
   kaiden: "Kaiden",
+  thato: "Thato",
 };
 
 const inviteKey = new URLSearchParams(window.location.search)
@@ -25,9 +26,6 @@ const yesDetails = document.querySelector("#yes-details");
 const finalPanel = document.querySelector("#final-panel");
 const arrivalTimeWrap = document.querySelector("#arrival-time-wrap");
 const arrivalTime = document.querySelector("#arrival-time");
-const bringingDessert = document.querySelector("#bringing-dessert");
-const dessertWrap = document.querySelector("#dessert-wrap");
-const dessert = document.querySelector("#dessert");
 const notes = document.querySelector("#notes");
 const submitButton = document.querySelector("#submit-button");
 const submitMessage = document.querySelector("#submit-message");
@@ -74,10 +72,6 @@ document.querySelectorAll('input[name="arrival-plan"]').forEach((input) => {
 
 document.querySelectorAll('input[name="payment"]').forEach((input) => {
   input.addEventListener("change", updateRadioCards);
-});
-
-bringingDessert.addEventListener("change", () => {
-  dessertWrap.classList.toggle("hidden", !bringingDessert.checked);
 });
 
 function formatTime(value) {
@@ -128,8 +122,8 @@ form.addEventListener("submit", async (event) => {
           : formatTime(arrivalTime.value)
         : "",
     paymentMethod: rsvpChoice === "yes" ? paymentMethod : "",
-    bringingDessert: rsvpChoice === "yes" && bringingDessert.checked,
-    dessert: rsvpChoice === "yes" && bringingDessert.checked ? dessert.value.trim() : "",
+    bringingDessert: false,
+    dessert: "",
     notes: notes.value.trim(),
   };
 
@@ -146,7 +140,7 @@ form.addEventListener("submit", async (event) => {
 
     showMessage(
       rsvpChoice === "yes"
-        ? "Perfetto! You're on the list. See you Friday!"
+        ? "Beauty! You're on the list. See you Thursday!"
         : "I'll miss you, but thanks for letting me know!",
       "saved"
     );
@@ -157,6 +151,4 @@ form.addEventListener("submit", async (event) => {
     submitButton.disabled = false;
     submitButton.textContent = "Send my RSVP";
   }
-
-  
 });
